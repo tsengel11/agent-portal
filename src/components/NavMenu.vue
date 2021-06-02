@@ -46,7 +46,7 @@
             <v-list-item-content>
 
 
-                <v-list-item-title v-text="item.text"></v-list-item-title>
+                <v-list-item-title @click="to_page(item.root)" v-text="item.text"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -56,11 +56,17 @@
 </template>
 <script>
 export default {
+  methods:{
+    to_page(root){
+      return location.replace(root)
+    }
+
+  },
   data: () => ({
     selectedItem: 0,
     items: [
       { text: 'Enrollment Status', icon: 'mdi-folder' ,root:'/'},
-      { text: 'New Enrollment', icon: 'mdi-account-multiple' },
+      { text: 'New Enrollment', icon: 'mdi-account-multiple',root:'/newenrollment' },
       { text: 'Knowledges', icon: 'mdi-star' },
       { text: 'Forms', icon: 'mdi-history' },
       { text: 'Price List', icon: 'mdi-check-circle' },
