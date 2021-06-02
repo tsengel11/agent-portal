@@ -1,9 +1,9 @@
 <template>
 
   <v-main>
-    <v-card align="center" class="ma-8 center">
-        <h1>New Student Enrollment</h1>
-      <v-col >
+    <v-card outlined align="center" class="ma-8 center">
+        <h1 class="pt-3">New Student Enrollment</h1>
+      <v-col>
         <v-form class="pa-5">
           <h3>Course Information:</h3>
           <v-autocomplete :items="courses" label="Choose courses"></v-autocomplete>
@@ -16,12 +16,7 @@
           <v-text-field label="Middle name (if applicable)" type="text"></v-text-field>
           <v-text-field label="Last Name" type="text"></v-text-field>
           <v-select :items="genders" label="Gender"></v-select>
-
-
-          <v-text-field label="Birthday" readonly v-model="birthday" type="date"></v-text-field>
-
-
-
+          <v-text-field label="Birthday"  type="date"></v-text-field>
           <v-select :items="offshoreFlag" label="Where are you you lodging your student visa application..."></v-select>
           <v-select :items="countries" label="Citizenship"></v-select>
           <v-select :items="countries" label="Country of Birth"></v-select>
@@ -75,6 +70,7 @@
           <v-btn type="submit" color="primary"> Submit Enrollment</v-btn>
         </v-form>
       </v-col>
+      <v-col> </v-col>
     </v-card>
   </v-main>
 </template>

@@ -5,7 +5,7 @@
         app
     >
       <!--  -->
-      Side Menu
+      <NavMenu></NavMenu>
     </v-navigation-drawer>
 
     <v-app-bar app color="indigo lighten-1" dark>
@@ -36,10 +36,11 @@
 </template>
 
 <script>
+import NavMenu from "./components/NavMenu";
 export default {
   name: 'App',
   components:{
-
+    NavMenu
   },
   data() {
     return {
