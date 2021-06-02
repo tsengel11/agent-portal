@@ -1,35 +1,29 @@
 <template>
   <v-app>
+    <v-navigation-drawer
+        v-model="drawer"
+        app
+    >
+      <!--  -->
+      Side Menu
+    </v-navigation-drawer>
+
     <v-app-bar app color="indigo lighten-1" dark>
-      <v-toolbar-title>Liberty Agent Portal</v-toolbar-title>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"> -
+
+      </v-app-bar-nav-icon>
+
+      <v-toolbar-title> Liberty Agent Portal</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text rounded>Main Web Site</v-btn>
-      <v-btn text rounded>Login</v-btn>
+      <v-btn text rounded href="https://libertycollege.edu.au">Main Web Site</v-btn>
+      <v-btn text rounded to="/">Home</v-btn>
+      <v-btn text rounded to="/login">Login</v-btn>
+      <v-btn text rounded to="/login">Logout</v-btn>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <!-- Login Module -->
-      <v-card width="400" class="mx-auto mt-5">
-        <v-card-title>
-          <h1 class="display-1">Login</h1>
-        </v-card-title>
-        <v-card-text>
-          <v-form>
-            <v-text-field label="Username" prepend-icon="mdi-account-circle" />
-            <v-text-field
-                :type="showPassword ? 'text' : 'password'"
-                label="Password"
-                prepend-icon="mdi-lock"
-                :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                @click:append="showPassword = !showPassword"
-            />
-          </v-form>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="info">Login</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-content>
+      <router-view></router-view>
+    </v-main>
     <v-footer padless>
       <v-col
           class="text-center"
@@ -44,9 +38,14 @@
 <script>
 export default {
   name: 'App',
+  components:{
+
+  },
   data() {
     return {
-      showPassword: false
+      drawer: null,
+      showPassword: false,
+      loginFrag:false
     }
   }
 }
