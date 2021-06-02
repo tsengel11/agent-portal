@@ -70,7 +70,7 @@ export default {
       { text: 'Knowledges', icon: 'mdi-star' },
       { text: 'Forms', icon: 'mdi-history' },
       { text: 'Price List', icon: 'mdi-check-circle' },
-      { text: 'Marketing Materials', icon: 'mdi-upload' }
+      { text: 'Marketing Materials', icon: 'mdi-upload',root:'/materials' }
     ],
   }),
 }
