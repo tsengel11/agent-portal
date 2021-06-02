@@ -1,9 +1,17 @@
 <template>
   <div class="ma-8">
-    <h3 class="ma-3">{{ msg }}</h3>
+
+  <v-row>
+    <div><v-btn class="ma-8" href="/newenrollment"> New Enrollment</v-btn></div>
+    <div class="ma-3">    <h3 >{{ msg }} </h3>
+      <h3> Total enrollment:{{students.length}}</h3>
+    </div>
+  </v-row>
+
+
     <v-data-table
         :headers="headers"
-        :items="desserts"
+        :items="students"
         class="elevation-1"
     >
       <template v-slot:item.status="{ item }">
@@ -41,7 +49,7 @@ export default {
         { text: 'Sent Date', value: 'sentdate' }
 
       ],
-      desserts: [
+      students: [
         {
           name: 'Irfan',
           lname: 'Asif',
@@ -78,54 +86,59 @@ export default {
           status: 'In Progress'
         },
         {
-          name: 'Jelly bean',
-          lname: 375,
-          course: 0.0,
-          sentdate: 94,
-          status: 0.0,
-          iron: '0%',
+          name: 'Hoang',
+          lname: 'Duc Dang',
+          course: 'CPC30211 - Certificate III in Carpentry',
+          sentdate: '27/01/2021',
+          status: 'Completed'
         },
         {
-          name: 'Lollipop',
-          lname: 392,
-          course: 0.2,
-          sentdate: 98,
-          status: 0,
-          iron: '2%',
+          name: 'Keyur',
+          lname: 'Maheshbhai Fosi',
+          course: 'Certificate III in Carpentry',
+          sentdate: '21/01/2021',
+          status: 'Completed'
         },
         {
-          name: 'Honeycomb',
-          lname: 408,
-          course: 3.2,
-          sentdate: 87,
-          status: 6.5,
-          iron: '45%',
+          name: 'Gursevak',
+          lname: 'Singh Aujla',
+          course: 'Certificate IV in Building and Construction',
+          sentdate: '25/05/2021',
+          status: 'Completed'
         },
         {
-          name: 'Donut',
-          lname: 452,
-          course: 25.0,
-          sentdate: 51,
-          status: 4.9,
-          iron: '22%',
+          name: 'Usama',
+          lname: 'Rao',
+          course: 'Certificate IV in Building and Construction',
+          sentdate: '19/04/2021',
+          status: 'Completed'
         },
         {
-          name: 'KitKat',
-          lname: 518,
-          course: 26.0,
-          sentdate: 65,
-          status: 7,
-          iron: '6%',
+          name: 'HongJun',
+          lname: 'Choi',
+          course: 'Diploma of Building and Construction (Building)',
+          sentdate: '12/04/2021',
+          status: 'Completed'
+        },
+        {
+          name: 'Saemiroo',
+          lname: 'Lee',
+          course: 'Diploma of Building and Construction (Building)',
+          sentdate: '12/04/2021',
+          status: 'Cancelled'
         },
       ],
     }
   },
   methods: {
     getColor (status) {
-      if (status > 400) return 'red'
-      else if (status > 200) return 'orange'
-      else return 'green'
+      if (status == 'In Progress') return 'orange'
+      else if (status == 'Completed') return 'green'
+      else return 'red'
     },
   },
+  computed:{
+
+  }
 }
 </script>

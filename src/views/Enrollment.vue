@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <v-btn class="ma-8" href="/newenrollment"> New Enrollment</v-btn>
     <EnrollmentList msg="List of Enrolled students"/>
   </div>
 </template>
